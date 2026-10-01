@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estágio Já | Divulgação de vagas</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- "defer" faz o JavaScript rodar só depois que o HTML terminou de carregar -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="topo">
+    <a href="#inicio" class="logo">Estágio Já</a>
+    <nav>
+      <a href="#cadastro">Cadastrar vaga</a>
+      <a href="#vagas">Ver vagas</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Hero: explica o objetivo do site e leva ao formulário -->
+    <section id="inicio" class="hero">
+      <h1>Divulgue sua vaga de estágio em 1 minuto.</h1>
+      <p>Cadastre a vaga da sua empresa e ela aparece na hora na lista para os estudantes.</p>
+      <a href="#cadastro" class="botao">Cadastrar vaga</a>
+    </section>
+
+    <!-- 2. Formulário: cada campo tem um id (para o label) e um name (para o JavaScript ler) -->
+    <section id="cadastro" class="secao">
+      <h2>Cadastre sua vaga</h2>
+      <form id="form-vaga" class="formulario">
+        <label for="empresa">Empresa</label>
+        <input type="text" id="empresa" name="empresa" required>
+
+        <label for="cargo">Nome da vaga</label>
+        <input type="text" id="cargo" name="cargo" placeholder="Ex.: Estágio em Marketing" required>
+
+        <label for="area">Área</label>
+        <select id="area" name="area">
+          <option>Tecnologia</option>
+          <option>Administração</option>
+          <option>Marketing</option>
+          <option>Engenharia</option>
+          <option>Outra</option>
+        </select>
+
+        <label for="modalidade">Modalidade</label>
+        <select id="modalidade" name="modalidade">
+          <option>Presencial</option>
+          <option>Híbrido</option>
+          <option>Remoto</option>
+        </select>
+
+        <label for="bolsa">Bolsa mensal em R$ (opcional)</label>
+        <input type="number" id="bolsa" name="bolsa" min="0" step="50">
+
+        <label for="contato">E-mail para contato</label>
+        <input type="email" id="contato" name="contato" required>
+
+        <button type="submit" class="botao">Publicar vaga</button>
+      </form>
+    </section>
+
+    <!-- 3. Tabela: o JavaScript preenche o <tbody> com as vagas cadastradas -->
+    <section id="vagas" class="secao secao-escura">
+      <h2>Vagas divulgadas <span id="contador"></span></h2>
+      <div class="tabela-area">
+        <table>
+          <thead>
+            <tr>
+              <th>Empresa</th><th>Vaga</th><th>Área</th>
+              <th>Modalidade</th><th>Bolsa</th><th>Contato</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="tabela-vagas"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape"><p>Estágio Já · Projeto de divulgação de vagas</p></footer>
+
+</body>
+</html>

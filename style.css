@@ -1,0 +1,85 @@
+:root {
+  --azul: #1e2a6b;
+  --coral: #ff7a59;
+  --fundo: #f6f7fb;
+  --texto: #171a2e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; } /* rolagem suave ao clicar no menu */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: var(--azul);
+}
+.logo { color: var(--coral); font-weight: 800; font-size: 1.3rem; text-decoration: none; }
+.topo nav a { color: var(--fundo); margin-left: 1.5rem; text-decoration: none; }
+.topo nav a:hover { color: var(--coral); }
+
+.hero { padding: 6rem 5%; background: var(--azul); color: var(--fundo); }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.8rem); line-height: 1.1; max-width: 16ch; }
+.hero p { max-width: 45ch; margin: 1.5rem 0 2rem; font-size: 1.15rem; }
+
+.botao {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background: var(--coral);
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.botao:hover { background: #ff9276; }
+.botao:focus-visible { outline: 3px solid var(--texto); outline-offset: 3px; }
+
+.secao { padding: 4rem 5%; }
+.secao h2 { font-size: 2rem; margin-bottom: 2rem; }
+.secao-escura { background: var(--azul); color: var(--fundo); }
+#contador { font-size: 1rem; color: var(--coral); font-weight: 600; }
+
+/* Formulário */
+.formulario { display: grid; gap: 0.5rem; max-width: 460px; }
+.formulario label { font-weight: 600; margin-top: 0.8rem; }
+.formulario input, .formulario select {
+  padding: 0.7rem;
+  border: 2px solid var(--azul);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.formulario .botao { margin-top: 1.5rem; }
+
+/* Tabela: o container permite rolar para o lado no celular */
+.tabela-area { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 700px; }
+th, td { padding: 0.8rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+th { color: var(--coral); }
+.vazio { text-align: center; opacity: 0.7; }
+
+.remover {
+  background: transparent;
+  color: var(--fundo);
+  border: 1px solid var(--fundo);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+.remover:hover { background: var(--coral); border-color: var(--coral); color: var(--texto); }
+
+.rodape { padding: 2rem 5%; background: var(--texto); color: var(--fundo); text-align: center; }
+
+@media (max-width: 700px) {
+  .topo nav a { margin-left: 0.8rem; }
+}
